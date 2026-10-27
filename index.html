@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 8C62 8 92 62 88 78C85 90 70 92 50 92C30 92 15 90 12 78C8 62 38 8 50 8Z' fill='%23fff' stroke='%234A3B52' stroke-width='6'/%3E%3Cpath d='M26 70H74V92C64 93 36 93 26 92Z' fill='%234A3B52'/%3E%3Ccircle cx='38' cy='50' r='6' fill='%234A3B52'/%3E%3Ccircle cx='62' cy='50' r='6' fill='%234A3B52'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Huninn&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#FFF8EC; --ink:#4A3B52; --soft:#8A7A92;
@@ -169,6 +169,103 @@ button{font-family:inherit;color:inherit;cursor:pointer}
   .logo h1{font-size:22px}.grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
   .stu svg{width:64px;height:64px}.mascot svg{width:58px;height:58px}.bubble{max-width:170px;font-size:13px}
 }
+
+/* ===== 糖霜餅乾風（預覽） ===== */
+:root{--ink:#5B3A29;--soft:#9A7B66;--pink:#E98A86;--pink2:#F7DAD6;--yellow:#EFC96B;--yellow2:#FBF1D4;
+ --mint:#9CC9A8;--mint2:#E3F1E6;--sky:#8FB3D1;--sky2:#E3EEF6;--lav:#B7A6CF;--lav2:#F0EBF5;--cream:#F6EEE2;
+ --bis:#DCA569;--bis2:#B97A43;--navy:#3E5672;--line:0 solid transparent}
+body{font-family:"Huninn","Baloo 2","Noto Sans TC",sans-serif;color:var(--ink);
+ background-color:#F3E9DA;
+ background-image:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.7),transparent 60%),
+  repeating-linear-gradient(0deg,transparent 0 38px,rgba(140,105,75,.10) 38px 40px),
+  repeating-linear-gradient(90deg,transparent 0 38px,rgba(140,105,75,.10) 38px 40px);
+ background-size:auto}
+.logo h1{color:var(--navy);letter-spacing:3px}.logo h1 span{color:var(--pink)}
+.logo small{color:var(--bis2)}
+/* 共用：餅乾＋糖霜 */
+.card,.stu,.prize,.plan,.modal,.li,.accb,.skill,.bubble,.classpill,.planbadge{
+ border:none!important;
+ background:radial-gradient(120% 70% at 25% 0%,rgba(255,255,255,.65),transparent 55%),var(--ice,#FFF9F1);
+ box-shadow:inset 0 0 0 3px rgba(255,255,255,.9),inset 0 0 0 5px rgba(185,122,67,.12),0 0 0 6px var(--bis),0 0 0 7.5px var(--bis2),0 9px 16px rgba(120,78,40,.25)!important}
+.card{border-radius:30px;padding:20px}
+.modal{background:#FBF4EA!important}
+.btn,.role,.chip{border:none;border-radius:999px;background:#FFF9F1;font-weight:700;
+ box-shadow:inset 0 0 0 2px rgba(255,255,255,.9),0 0 0 3px var(--bis),0 4px 0 var(--bis2),0 6px 10px rgba(120,78,40,.2)}
+.btn:active,.role:active,.skill:active{transform:translateY(3px);box-shadow:0 0 0 3px var(--bis),0 1px 0 var(--bis2)}
+.btn.pink,.role.on{background:var(--pink);color:#fff}
+.role[data-r=student].on{background:var(--sky)}.role[data-r=parent].on{background:var(--mint)}
+.btn.yellow,.chip.on{background:var(--yellow);color:var(--ink)}
+.btn.mint{background:var(--mint);color:#fff}.btn.sky{background:var(--navy);color:#fff}
+.chip{padding:6px 16px;margin:4px}
+.sub{gap:12px}
+/* 學生餅乾 */
+.grid{gap:22px;grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+.stu{border-radius:34px;padding:12px 8px 14px}
+.stu:nth-child(6n+1){--ice:#FBEDEB}.stu:nth-child(6n+2){--ice:#F1ECF6}.stu:nth-child(6n+3){--ice:#FBF0E3}
+.stu:nth-child(6n+4){--ice:#FBF5DF}.stu:nth-child(6n+5){--ice:#EDF4E6}.stu:nth-child(6n){--ice:#E8F1F8}
+.stu svg{width:100px;height:102px;filter:drop-shadow(0 2px 1px rgba(120,78,40,.15))}
+.stu:hover{transform:translateY(-4px) rotate(-1.5deg)}
+.stu.sel{outline:3px dashed var(--pink);outline-offset:10px}
+.stu .nm{font-size:17px;letter-spacing:2px}
+.pts{border:none;background:var(--yellow2);color:var(--ink);top:-12px;right:-12px;width:42px;height:42px;
+ box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3.5px rgba(185,122,67,.25),0 0 0 4px var(--bis),0 0 0 5px var(--bis2),0 4px 6px rgba(120,78,40,.25)}
+/* 獎品：吊牌餅乾＋小孔 */
+.prizes{gap:24px}
+.prize{border-radius:26px 26px 30px 30px;padding:24px 12px 14px}
+.prize::before{content:"";position:absolute;top:9px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:#8E5A2E;box-shadow:0 0 0 2.5px var(--bis)}
+.prize:nth-child(5n+1){--ice:#E8F1F8}.prize:nth-child(5n+2){--ice:#FBEDEB}.prize:nth-child(5n+3){--ice:#EDF4E6}.prize:nth-child(5n+4){--ice:#FBF5DF}.prize:nth-child(5n){--ice:#F1ECF6}
+.cost{border:none;background:#fff;box-shadow:0 0 0 2px var(--bis);color:var(--bis2)}
+.tag{border:none;background:var(--pink);box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--pink)}
+/* 糖果罐進度條：粉色糖霜＋擠花條紋 */
+.bar{border:none;background:#fff;box-shadow:inset 0 1px 3px rgba(120,78,40,.2),0 0 0 3px var(--bis)}
+.bar i{border:none;background:repeating-linear-gradient(-45deg,var(--pink) 0 9px,#F3B3AE 9px 18px);box-shadow:inset 0 -3px 0 rgba(0,0,0,.06)}
+/* 技能鈕：小餅乾 */
+.skills{gap:18px;padding:8px}.list{gap:16px;padding:6px}
+.skill{border-radius:24px;padding:12px 6px}
+.skill .p{border:none;background:var(--mint2);box-shadow:0 0 0 2px var(--mint)}
+.skill.neg .p{background:var(--pink2);box-shadow:0 0 0 2px var(--pink)}
+/* 學生頁 */
+.lv{border:none;background:var(--navy);box-shadow:0 0 0 3px var(--bis)}
+.bigpts{color:var(--navy)}
+.stamp{border:2px dashed rgba(185,122,67,.4);background:#FFFBF4}
+.stamp.got{border:none;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.7),transparent 45%),var(--pink2);
+ box-shadow:inset 0 0 0 2px #fff,0 0 0 4px var(--bis),0 0 0 5px var(--bis2),0 3px 5px rgba(120,78,40,.25)}
+.stamp.got:nth-child(3n+2){background-color:var(--mint2)}.stamp.got:nth-child(3n){background-color:var(--yellow2)}
+.picker button{border:none;background:#FFF9F1;box-shadow:0 0 0 2.5px var(--bis);border-radius:20px;margin:4px}
+.picker button.on{background:var(--sky2);box-shadow:0 0 0 2.5px var(--bis),0 0 0 5px var(--sky)}
+.picker svg{width:48px;height:50px}
+.accb.on{--ice:var(--yellow2)}
+.lock{background:rgba(251,244,234,.8)}
+/* 家長方案 */
+.plan{border-radius:34px}
+.plan.hot{--ice:#FBEDEB}
+.plan li:before{border:none;background:var(--mint);color:#fff;box-shadow:0 0 0 2px #fff}
+.chart{border-bottom:4px solid var(--bis)}
+.chart div{border:none;border-radius:14px 14px 0 0;background:radial-gradient(circle at 50% 12%,rgba(255,255,255,.6) 0 3px,transparent 4px) 0 0/100% 18px,var(--sky)}
+.chart div:nth-child(2n){background-color:var(--pink)}
+.note{border:2px dashed var(--bis);background:#FFF9F1;color:var(--ink)}
+.x{border:none;background:#fff;box-shadow:0 0 0 3px var(--bis)}
+.form input,.form select{border:none;box-shadow:inset 0 1px 3px rgba(120,78,40,.2),0 0 0 2.5px var(--bis);color:var(--ink)}
+.li svg{width:44px;height:46px}
+.mhead svg{width:80px;height:82px}
+.float{-webkit-text-stroke:1.5px var(--ink)}
+.bubble{border-radius:22px 22px 6px 22px}
+.planbadge{background:var(--yellow2)}.planbadge.free{background:#FFF9F1}
+.preview-ribbon{position:fixed;top:12px;left:-38px;transform:rotate(-40deg);background:var(--pink);color:#fff;font-weight:900;padding:4px 44px;z-index:60;box-shadow:0 0 0 2px #fff,0 3px 6px rgba(0,0,0,.2);font-size:13px}
+
+/* 主題切換 */
+.themebar{display:none;flex-wrap:wrap;gap:16px;margin:18px 4px 4px;padding:4px}
+.themebar.on{display:flex;animation:pop .25s}
+.th{border:none;border-radius:22px;background:#FFF9F1;padding:8px 14px 8px 8px;display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:var(--ink);
+ box-shadow:inset 0 0 0 2px #fff,0 0 0 3px var(--bis),0 4px 0 var(--bis2)}
+.th .sw{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:22px;border-radius:50%;box-shadow:inset 0 0 0 2px #fff,0 0 0 2px var(--bis);background-size:120px 120px;background-position:center}
+.th.on{background:var(--yellow2);box-shadow:inset 0 0 0 2px #fff,0 0 0 3px var(--bis),0 0 0 6px var(--pink),0 4px 0 6px var(--bis2)}
+body{transition:background-color .4s}
+
+.petgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:12px}
+.petgrid button{border:none;background:#FFF9F1;border-radius:20px;padding:6px 4px 8px;font-weight:700;color:var(--ink);box-shadow:0 0 0 2.5px var(--bis);display:flex;flex-direction:column;align-items:center}
+.petgrid button.on{background:var(--yellow2);box-shadow:0 0 0 2.5px var(--bis),0 0 0 5.5px var(--pink)}
+.petgrid svg{width:78px;height:80px}.petgrid span{font-size:13px}
 </style>
 </head>
 <body>
@@ -180,7 +277,9 @@ button{font-family:inherit;color:inherit;cursor:pointer}
     </div>
     <div class="classpill" id="classPill">🏫 三年二班</div>
     <div class="planbadge" id="planBadge"></div>
+    <button class="btn" id="themeBtn" onclick="toggleThemeBar()">🎨 換主題</button>
   </div>
+  <div class="themebar" id="themeBar"></div>
 
   <div class="roles">
     <button class="role on" data-r="teacher">🧑‍🏫 老師</button>
@@ -193,13 +292,37 @@ button{font-family:inherit;color:inherit;cursor:pointer}
 </div>
 
 <div class="mask" id="mask"><div class="modal" id="modal"></div></div>
-<div class="mascot"><div class="bubble" id="bubble">嗨！我是小糰～點一位同學來加分吧！</div><div id="mascotSvg"></div></div>
+<div class="mascot"><div class="bubble" id="bubble">嗨！我是點點～點一位同學來加分吧！</div><div id="mascotSvg"></div></div>
 
 <script>
-/* ---------- 原創角色（程式繪製） ---------- */
+
+/* ---------- 主題造型（換主題時角色一起換裝） ---------- */
+function themeWear(th){
+  const k='#5B3A29';
+  const W={
+   dragon:{head:`<path d="M26 36 l-7 -5 l6 -3 l-5 -7 h8 M74 36 l7 -5 l-6 -3 l5 -7 h-8" fill="#E0786A" stroke="${k}" stroke-width="2.2" stroke-linejoin="round"/><path d="M26 36 C26 15 74 15 74 36 Z" fill="#7DB8B0" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><path d="M39 20 l-5 -11 l9 6z M61 20 l5 -11 l-9 6z" fill="#E8C25E" stroke="${k}" stroke-width="2.4" stroke-linejoin="round"/><circle cx="42" cy="27" r="4.2" fill="#fff" stroke="${k}" stroke-width="2"/><circle cx="58" cy="27" r="4.2" fill="#fff" stroke="${k}" stroke-width="2"/><circle cx="42.5" cy="27.5" r="1.8" fill="${k}"/><circle cx="58.5" cy="27.5" r="1.8" fill="${k}"/><path d="M30 34 h40" stroke="#E8C25E" stroke-width="3"/>`,face:'',
+     neck:`<path d="M28 77 Q50 88 72 77" stroke="#E0786A" stroke-width="2.5" fill="none"/><g transform="translate(50 87)"><path d="M0 -4 c-9 -6 -12 6 0 12 c12 -6 9 -18 0 -12z" fill="#E0786A" stroke="${k}" stroke-width="2"/><path d="M0 8 v6 M-3 14 h6" stroke="#E8C25E" stroke-width="2.4" stroke-linecap="round"/></g><g transform="translate(82 82) rotate(10)"><path d="M0 -12 l12 19 h-24z" fill="#8FC59E" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/><path d="M-7 -1 h14" stroke="#E8C25E" stroke-width="2.5"/></g>`},
+   moon:{head:`<path d="M27 36 C27 13 73 13 73 36 Z" fill="#CFE08A" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><path d="M29 34 h42" stroke="#F6EFD0" stroke-width="4" stroke-linecap="round"/><circle cx="40" cy="24" r="1.3" fill="#A9BC5E"/><circle cx="56" cy="21" r="1.3" fill="#A9BC5E"/><circle cx="63" cy="28" r="1.3" fill="#A9BC5E"/><circle cx="47" cy="29" r="1.3" fill="#A9BC5E"/><path d="M50 15 v-7" stroke="${k}" stroke-width="3" stroke-linecap="round"/><path d="M50 10 q10 -9 17 -1 q-8 7 -17 1z" fill="#8FC59E" stroke="${k}" stroke-width="2" stroke-linejoin="round"/>`,face:'',
+     neck:`<g transform="translate(81 83)"><circle r="11" fill="#E3B77A" stroke="${k}" stroke-width="2.5"/><circle r="6.5" fill="none" stroke="#C9965E" stroke-width="1.6"/>${[0,60,120,180,240,300].map(r=>`<circle cx="0" cy="-8.8" r="1.6" fill="#C9965E" transform="rotate(${r})"/>`).join('')}<circle r="2" fill="#C9965E"/></g>`},
+   xmas:{head:`<path d="M26 34 C30 12 54 2 74 16 L88 40 L76 34 Z" fill="#D9534F" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><circle cx="88" cy="41" r="6.5" fill="#fff" stroke="${k}" stroke-width="2.5"/><rect x="20" y="28" width="62" height="11" rx="5.5" fill="#fff" stroke="${k}" stroke-width="2.5"/>`,face:'',
+     neck:`<path d="M24 80 Q50 91 76 80" stroke="#6FA37A" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M66 84 l4 12 l7 -2 l-3 -12" fill="#6FA37A" stroke="${k}" stroke-width="2" stroke-linejoin="round"/><path d="M30 82 l6 3 M42 86 l6 1 M56 86 l6 -1" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>`},
+   newyear:{head:`<path d="M30 34 C30 16 70 16 70 34 Z" fill="#D95B4F" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><rect x="27" y="31" width="46" height="7" rx="3.5" fill="#E3B24F" stroke="${k}" stroke-width="2.5"/><circle cx="50" cy="16" r="4.5" fill="#E3B24F" stroke="${k}" stroke-width="2.5"/><path d="M50 20 v8" stroke="#E3B24F" stroke-width="2"/>`,face:'',
+     neck:`<g transform="translate(80 82) rotate(12)"><rect x="-7" y="-10" width="14" height="19" rx="2.5" fill="#D95B4F" stroke="${k}" stroke-width="2.5"/><circle cy="-1" r="3.5" fill="#E3B24F"/><path d="M-7 -5 L0 -1 L7 -5" fill="none" stroke="#B8443A" stroke-width="1.5"/></g>`},
+   cookie:{head:'',face:'',neck:''}
+  };
+  return W[th]||{head:'',face:'',neck:''};
+}
+/* ---------- 原創角色：12 種動物（程式繪製） ---------- */
 const PETS=[
- {name:'喵糰',c:'#FFB8C9'},{name:'兔兔',c:'#C9B8FF'},{name:'熊熊',c:'#FFC98F'},
- {name:'啾啾',c:'#FFE07A'},{name:'呱呱',c:'#9FE3B8'},{name:'小恐',c:'#8FD3F5'}
+ {name:'鯨魚',c:'#9DBEE0'},{name:'鯊魚',c:'#AEBCCB'},{name:'海龜',c:'#A9D18E'},{name:'海豚',c:'#A6CDE6'},
+ {name:'章魚',c:'#F2A7A0'},{name:'企鵝',c:'#6F7C98'},{name:'長頸鹿',c:'#F3CF7E'},{name:'鱷魚',c:'#9CC98A'},
+ {name:'熊貓',c:'#FBFAF4'},{name:'獅子',c:'#F3C27A'},{name:'大象',c:'#BAC1D8'},{name:'無尾熊',c:'#BCC0C8'},
+ {name:'老虎',c:'#F4B860'},{name:'兔子',c:'#FBF7F2'},{name:'貓咪',c:'#F2C9A0'},{name:'柴犬',c:'#E9B26E'},
+ {name:'狐狸',c:'#EE9A5A'},{name:'猴子',c:'#B98A62'},{name:'河馬',c:'#B9A9C6'},{name:'斑馬',c:'#FFFFFF'},
+ {name:'綿羊',c:'#FFFDF6'},{name:'小豬',c:'#F7C6C2'},{name:'貓頭鷹',c:'#B89A7A'},{name:'刺蝟',c:'#F3E2C8'},
+ {name:'水獺',c:'#A9805E'},{name:'海獅',c:'#8E9DAE'},{name:'螃蟹',c:'#F08A70'},{name:'河豚',c:'#F3D98A'},
+ {name:'台灣黑熊',c:'#4A4646'},{name:'石虎',c:'#E2B27A'},{name:'梅花鹿',c:'#D9A066'},{name:'青蛙',c:'#9FD38A'},
+ {name:'日本狐狸犬',c:'#FFFFFF'},{name:'薩摩耶',c:'#FBF6EC'},{name:'馬爾濟斯',c:'#FFFDF8'}
 ];
 const ACCS=[
  {id:'none',name:'不戴',e:'🚫',plus:false},{id:'bow',name:'蝴蝶結',e:'🎀',plus:false},
@@ -207,47 +330,161 @@ const ACCS=[
  {id:'hat',name:'魔法帽',e:'🎩',plus:true},{id:'star',name:'星星髮夾',e:'⭐',plus:true},
  {id:'glass',name:'圓眼鏡',e:'👓',plus:true},{id:'flower',name:'小花',e:'🌸',plus:true}
 ];
-function critter(type,acc='none',mood='happy'){
-  const p=PETS[type%PETS.length],c=p.c,k='#4A3B52';
-  let ears='';
-  if(type===0) ears=`<path d="M22 40 L28 14 L44 32Z M78 40 L72 14 L56 32Z" fill="${c}" stroke="${k}" stroke-width="3.5" stroke-linejoin="round"/>`;
-  if(type===1) ears=`<ellipse cx="36" cy="18" rx="8" ry="20" fill="${c}" stroke="${k}" stroke-width="3.5"/><ellipse cx="64" cy="18" rx="8" ry="20" fill="${c}" stroke="${k}" stroke-width="3.5"/><ellipse cx="36" cy="20" rx="3.5" ry="12" fill="#FFD6E0"/><ellipse cx="64" cy="20" rx="3.5" ry="12" fill="#FFD6E0"/>`;
-  if(type===2) ears=`<circle cx="26" cy="30" r="11" fill="${c}" stroke="${k}" stroke-width="3.5"/><circle cx="74" cy="30" r="11" fill="${c}" stroke="${k}" stroke-width="3.5"/><circle cx="26" cy="30" r="5" fill="#FFD6E0"/><circle cx="74" cy="30" r="5" fill="#FFD6E0"/>`;
-  if(type===3) ears=`<path d="M50 26 C46 14 40 12 42 6 C48 10 50 14 50 26 C52 16 56 10 60 10 C58 16 54 20 50 26Z" fill="${c}" stroke="${k}" stroke-width="3" stroke-linejoin="round"/>`;
-  if(type===4) ears=`<circle cx="32" cy="32" r="13" fill="${c}" stroke="${k}" stroke-width="3.5"/><circle cx="68" cy="32" r="13" fill="${c}" stroke="${k}" stroke-width="3.5"/>`;
-  if(type===5) ears=`<path d="M34 30 L40 16 L46 28 L52 12 L58 28 L64 16 L68 30Z" fill="#FFD45C" stroke="${k}" stroke-width="3" stroke-linejoin="round"/>`;
-  const body=`<path d="M14 64 C14 38 30 26 50 26 C70 26 86 38 86 64 C86 82 72 90 50 90 C28 90 14 82 14 64Z" fill="${c}" stroke="${k}" stroke-width="3.5"/>`;
-  let eyes;
-  if(type===4) eyes=`<circle cx="32" cy="32" r="4.5" fill="${k}"/><circle cx="68" cy="32" r="4.5" fill="${k}"/><circle cx="33.5" cy="30.5" r="1.5" fill="#fff"/><circle cx="69.5" cy="30.5" r="1.5" fill="#fff"/>`;
-  else if(mood==='wink') eyes=`<path d="M32 58 q6 -6 12 0" stroke="${k}" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="62" cy="57" r="4.5" fill="${k}"/>`;
-  else eyes=`<circle cx="38" cy="57" r="4.5" fill="${k}"/><circle cx="62" cy="57" r="4.5" fill="${k}"/><circle cx="39.5" cy="55.5" r="1.6" fill="#fff"/><circle cx="63.5" cy="55.5" r="1.6" fill="#fff"/>`;
-  const face=`<ellipse cx="28" cy="67" rx="6.5" ry="4" fill="#FF8FAB" opacity=".55"/><ellipse cx="72" cy="67" rx="6.5" ry="4" fill="#FF8FAB" opacity=".55"/>
-   ${type===3?`<path d="M45 64 L55 64 L50 70Z" fill="#FFAE6B" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/>`:`<path d="M44 65 q3 4 6 0 q3 4 6 0" stroke="${k}" stroke-width="3" fill="none" stroke-linecap="round"/>`}`;
-  const feet=`<ellipse cx="36" cy="90" rx="9" ry="5" fill="${c}" stroke="${k}" stroke-width="3"/><ellipse cx="64" cy="90" rx="9" ry="5" fill="${c}" stroke="${k}" stroke-width="3"/>`;
-  let a='';
-  if(acc==='bow') a=`<g transform="translate(66 30) rotate(15)"><path d="M0 0 L-12 -8 L-12 8Z M0 0 L12 -8 L12 8Z" fill="#FF7A9C" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/><circle r="4" fill="#FF7A9C" stroke="${k}" stroke-width="2.5"/></g>`;
-  if(acc==='leaf') a=`<path d="M50 26 L50 14" stroke="${k}" stroke-width="3"/><path d="M50 16 C40 4 30 12 34 14 C40 18 46 16 50 16Z M50 16 C60 4 70 12 66 14 C60 18 54 16 50 16Z" fill="#7DDCB8" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  if(acc==='crown') a=`<path d="M34 28 L32 12 L42 20 L50 8 L58 20 L68 12 L66 28Z" fill="#FFD45C" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><circle cx="50" cy="20" r="2.6" fill="#FF7A9C"/>`;
-  if(acc==='hat') a=`<path d="M30 30 L70 30 L60 26 L54 2 L40 22 Z" fill="#B9A4F0" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><path d="M26 30 L74 30" stroke="${k}" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="18" r="2.5" fill="#FFD45C"/>`;
-  if(acc==='star') a=`<path d="M70 26 l3 7 7 1 -5 5 1.5 7 -6.5 -3.5 -6.5 3.5 1.5 -7 -5 -5 7 -1Z" fill="#FFD45C" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  if(acc==='glass') a=`<circle cx="38" cy="57" r="9" fill="none" stroke="${k}" stroke-width="3"/><circle cx="62" cy="57" r="9" fill="none" stroke="${k}" stroke-width="3"/><path d="M47 57 L53 57" stroke="${k}" stroke-width="3"/>`;
-  if(acc==='flower') a=`<g transform="translate(32 32)">${[0,72,144,216,288].map(r=>`<ellipse rx="4.5" ry="7" transform="rotate(${r}) translate(0 -6)" fill="#FFB8C9" stroke="${k}" stroke-width="2"/>`).join('')}<circle r="3.5" fill="#FFD45C" stroke="${k}" stroke-width="2"/></g>`;
-  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${type===5?ears:''}${feet}${type!==5&&type!==3?ears:''}${body}${type===3?ears:''}${eyes}${face}${a}</svg>`;
+function animalArt(type,mood){
+  const t=type%PETS.length,c=PETS[t].c,k='#5E5754',sw=`stroke="${k}" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"`;
+  const BEAN=`M50 24 C70 24 80 40 80 62 C80 82 71 92 50 92 C29 92 20 82 20 62 C20 40 30 24 50 24Z`;
+  const bean=(f=c)=>`<path d="${BEAN}" fill="${f}" ${sw}/>`;
+  const outline=`<path d="${BEAN}" fill="none" ${sw}/>`;
+  const eyes=(y=52,dx=8)=>mood==='wink'
+    ?`<path d="M${50-dx-3} ${y} q3 -3 6 0" ${sw} fill="none"/><circle cx="${50+dx}" cy="${y}" r="2.7" fill="${k}"/>`
+    :`<circle cx="${50-dx}" cy="${y}" r="2.7" fill="${k}"/><circle cx="${50+dx}" cy="${y}" r="2.7" fill="${k}"/>`;
+  const mouth=(y=58)=>`<path d="M46 ${y} q2 2.6 4 0 q2 2.6 4 0" ${sw} stroke-width="2.2" fill="none"/>`;
+  const blush=(y=58,dx=15)=>`<ellipse cx="${50-dx}" cy="${y}" rx="4.2" ry="2.6" fill="#F2A9A2" opacity=".6"/><ellipse cx="${50+dx}" cy="${y}" rx="4.2" ry="2.6" fill="#F2A9A2" opacity=".6"/>`;
+  const arms=(f='none')=>`<path d="M33 66 q-1 9 7 10" ${sw} fill="${f}"/><path d="M67 66 q1 9 -7 10" ${sw} fill="${f}"/>`;
+  const feet=(f=c)=>`<path d="M37 89 q0 6 5 6 q5 0 5 -5 M53 90 q0 5 5 5 q5 0 5 -6" fill="${f}" ${sw}/>`;
+  const belly=(f,ry=15)=>`<ellipse cx="50" cy="77" rx="17" ry="${ry}" fill="${f}"/>`;
+  switch(t){
+  case 0: return `<path d="M50 23 v-9 M50 16 q-6 -6 -11 -4 M50 16 q6 -6 11 -4" ${sw} stroke="#7FB6E0" fill="none"/><path d="M76 80 q12 2 15 -10 q-6 3 -9 0 q0 7 -7 6" fill="${c}" ${sw}/>${feet()}${bean()}${belly('#EAF2FA')}<path d="M44 70 v5 M50 69 v6 M56 70 v5" stroke="#BFD3E6" stroke-width="2" stroke-linecap="round"/>${outline}${eyes()}${blush()}${mouth()}${arms()}`;
+  case 1: return `<path d="M42 27 L53 8 L59 27" fill="${c}" ${sw}/>${feet()}${bean()}${belly('#F7F8FA',17)}${outline}${eyes(50)}${blush(57)}
+    <path d="M43 58 q7 5 14 0" fill="#fff" ${sw} stroke-width="2.2"/><path d="M46 58.8 l1.5 2 l1.5 -1.6 l1.5 2 l1.5 -2 l1.5 1.6 l1.5 -2" stroke="${k}" stroke-width="1.2" fill="none"/>
+    <path d="M24 52 q2 3 0 6 M27 50 q2 4 0 8" ${sw} stroke-width="1.8" fill="none" opacity=".6"/>${arms()}`;
+  case 2: return `<ellipse cx="50" cy="66" rx="36" ry="27" fill="#B88F5C" ${sw}/><path d="M18 62 q32 -8 64 0" stroke="#9C7647" stroke-width="2" fill="none"/>${feet()}${bean()}
+    <ellipse cx="50" cy="76" rx="18" ry="15" fill="#F2DFA6" ${sw} stroke-width="2.2"/><path d="M33 76 h34 M50 61 v30 M37 67 q13 4 26 0 M37 85 q13 -4 26 0" stroke="#D6BD7C" stroke-width="1.6" fill="none"/>${eyes()}${blush(57)}${mouth(57)}<circle cx="40" cy="36" r="2" fill="#8DBB72"/><circle cx="60" cy="33" r="2.4" fill="#8DBB72"/>${arms()}`;
+  case 3: return `<path d="M46 26 Q52 6 64 10 Q58 15 60 28" fill="${c}" ${sw}/>${feet()}${bean()}${belly('#EEF6FB',16)}${outline}
+    <ellipse cx="50" cy="60" rx="9" ry="5.5" fill="#EEF6FB" ${sw} stroke-width="2.2"/><path d="M46 60 q4 2.6 8 0" ${sw} stroke-width="1.8" fill="none"/>${eyes(50,9)}${blush(56,16)}${arms()}`;
+  case 4: { const tent=[24,35,46,57,68].map((x,i)=>`<path d="M${x} 74 q${i%2?-3:3} 10 ${i%2?3:-2} 16 q6 2 8 -3 q-2 -7 1 -13" fill="${c}" ${sw}/><circle cx="${x+3}" cy="87" r="1.3" fill="#FBE3DF"/>`).join('');
+    return `${tent}<path d="M50 20 C70 20 80 36 80 56 C80 72 68 78 50 78 C32 78 20 72 20 56 C20 36 30 20 50 20Z" fill="${c}" ${sw}/><circle cx="36" cy="34" r="3" fill="#F7C9C3"/><circle cx="62" cy="30" r="3.6" fill="#F7C9C3"/><circle cx="70" cy="42" r="2.3" fill="#F7C9C3"/>${eyes(52)}${blush(58)}<ellipse cx="50" cy="61" rx="3" ry="2.4" fill="none" ${sw} stroke-width="2"/>`; }
+  case 5: return `${feet('#F2B266')}${bean()}<path d="M50 44 C58 34 72 40 70 56 C74 70 70 86 50 88 C30 86 26 70 30 56 C28 40 42 34 50 44Z" fill="#FFFDF8"/>${outline}${eyes(54)}${blush(60)}
+    <path d="M46 58 L54 58 L50 63Z" fill="#F2B266" ${sw} stroke-width="2"/><path d="M24 62 q-6 10 2 16" fill="${c}" ${sw}/><path d="M76 62 q6 10 -2 16" fill="${c}" ${sw}/>`;
+  case 6: return `<path d="M40 27 v-11 M60 27 v-11" ${sw} stroke-width="3.2"/><circle cx="40" cy="14" r="4" fill="#B9844F" ${sw} stroke-width="2.2"/><circle cx="60" cy="14" r="4" fill="#B9844F" ${sw} stroke-width="2.2"/>
+    <ellipse cx="24" cy="36" rx="8" ry="4" fill="${c}" ${sw} transform="rotate(-25 24 36)"/><ellipse cx="76" cy="36" rx="8" ry="4" fill="${c}" ${sw} transform="rotate(25 76 36)"/>
+    ${feet()}${bean()}<path d="M28 46 q5 -3 8 2 q-2 5 -7 3z M66 40 q7 -1 7 5 q-5 3 -8 -2z M25 72 q4 -5 8 -1 q0 5 -5 5z M70 74 q5 -4 7 2 q-3 5 -7 2z M44 32 q5 -2 7 2 q-3 3 -7 1z M56 84 q5 -3 7 1 q-3 4 -7 2z" fill="#D9A25E"/>
+    <ellipse cx="50" cy="61" rx="11" ry="7" fill="#FBE8C2" ${sw} stroke-width="2.2"/><circle cx="46.5" cy="60" r="1.3" fill="${k}"/><circle cx="53.5" cy="60" r="1.3" fill="${k}"/>${eyes(50,10)}${blush(56,18)}${arms()}`;
+  case 7: return `${feet()}<path d="M78 82 q12 4 12 -6" ${sw} fill="none"/><circle cx="40" cy="30" r="7.5" fill="${c}" ${sw}/><circle cx="60" cy="30" r="7.5" fill="${c}" ${sw}/>${bean()}
+    <ellipse cx="50" cy="80" rx="16" ry="12" fill="#D3E8B8"/><path d="M38 76 h24 M37 82 h26 M39 88 h22" stroke="#B5D394" stroke-width="1.6"/>${outline}
+    <path d="M28 52 Q50 44 72 52 Q72 64 50 66 Q28 64 28 52Z" fill="#B7D8A5" ${sw} stroke-width="2.4"/><circle cx="44" cy="52" r="1.5" fill="${k}"/><circle cx="56" cy="52" r="1.5" fill="${k}"/>
+    <path d="M33 60 l2 3 l2 -2 M63 60 l2 2 l2 -3" stroke="#fff" stroke-width="2" fill="none"/>
+    <circle cx="40" cy="30" r="2.7" fill="${k}"/><circle cx="60" cy="30" r="2.7" fill="${k}"/><circle cx="50" cy="38" r="1.8" fill="#86B573"/>${arms()}`;
+  case 8: return `<circle cx="32" cy="30" r="8" fill="#4A4646" ${sw}/><circle cx="68" cy="30" r="8" fill="#4A4646" ${sw}/><path d="M37 89 q0 6 5 6 q5 0 5 -5 M53 90 q0 5 5 5 q5 0 5 -6" fill="#4A4646" ${sw}/>${bean()}
+    <ellipse cx="41" cy="51" rx="5.5" ry="7" fill="#4A4646" transform="rotate(25 41 51)"/><ellipse cx="59" cy="51" rx="5.5" ry="7" fill="#4A4646" transform="rotate(-25 59 51)"/>
+    <circle cx="41.5" cy="51" r="2.2" fill="#fff"/><circle cx="58.5" cy="51" r="2.2" fill="#fff"/><ellipse cx="50" cy="58" rx="3" ry="2" fill="#4A4646"/>${mouth(61)}${blush(62,17)}
+    <path d="M31 64 q-3 12 8 13 q4 -6 -1 -13z M69 64 q3 12 -8 13 q-4 -6 1 -13z" fill="#4A4646" ${sw}/>`;
+  case 9: { const mane=Array.from({length:12},(_,i)=>{const a=Math.PI+i/11*Math.PI;return `<circle cx="${(50+27*Math.cos(a)).toFixed(1)}" cy="${(50+24*Math.sin(a)).toFixed(1)}" r="9" fill="#E59A55" ${sw}/>`}).join('');
+    return `<path d="M76 84 q14 0 12 -14" ${sw} fill="none"/><circle cx="88" cy="68" r="4" fill="#E59A55" ${sw}/>${mane}${feet()}${bean()}${belly('#FBE8C2',14)}${outline}
+    <circle cx="35" cy="32" r="5" fill="${c}" ${sw}/><circle cx="65" cy="32" r="5" fill="${c}" ${sw}/><ellipse cx="50" cy="59" rx="8" ry="5.5" fill="#FBE8C2"/><path d="M47.5 56 h5 l-2.5 2.6z" fill="${k}"/>${eyes(50,9)}${mouth(60)}${blush(57,17)}${arms()}`; }
+  case 10: return `<path d="M28 38 C10 32 8 64 24 66 C28 60 30 50 28 38Z" fill="${c}" ${sw}/><path d="M72 38 C90 32 92 64 76 66 C72 60 70 50 72 38Z" fill="${c}" ${sw}/><path d="M18 46 C15 54 17 60 22 62 M82 46 C85 54 83 60 78 62" stroke="#F2C3BF" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    ${feet()}${bean()}<path d="M46 56 C46 66 46 72 40 74 C36 75 36 70 40 70 C42 69 43 64 42 56Z" fill="${c}" ${sw}/><path d="M42.5 61 h3 M42.5 66 h3" stroke="${k}" stroke-width="1.2" opacity=".5"/>${eyes(50,9)}${blush(58,17)}<path d="M62 68 q1 8 -6 9" ${sw} fill="none"/>`;
+  case 11: return `<circle cx="27" cy="34" r="11" fill="${c}" ${sw}/><circle cx="73" cy="34" r="11" fill="${c}" ${sw}/><circle cx="27" cy="35" r="5.5" fill="#FBF6F0"/><circle cx="73" cy="35" r="5.5" fill="#FBF6F0"/>
+    ${feet()}${bean()}${belly('#F1EEEA',14)}${outline}<ellipse cx="50" cy="57" rx="6" ry="7.5" fill="#4F4E58" ${sw} stroke-width="2"/><ellipse cx="48" cy="54" rx="1.5" ry="2.2" fill="#fff" opacity=".5"/>${eyes(49,12)}${blush(60,18)}${arms()}`;
+  }
+  const ears=(f,r=7,y=30,dx=17,inner)=>`<circle cx="${50-dx}" cy="${y}" r="${r}" fill="${f}" ${sw}/><circle cx="${50+dx}" cy="${y}" r="${r}" fill="${f}" ${sw}/>${inner?`<circle cx="${50-dx}" cy="${y+1}" r="${r*.5}" fill="${inner}"/><circle cx="${50+dx}" cy="${y+1}" r="${r*.5}" fill="${inner}"/>`:''}`;
+  const tri=(f,inner)=>`<path d="M27 40 L30 18 L45 28Z M73 40 L70 18 L55 28Z" fill="${f}" ${sw}/>${inner?`<path d="M31 34 L32 24 L39 29Z M69 34 L68 24 L61 29Z" fill="${inner}"/>`:''}`;
+  const whisk=`<path d="M30 58 h-8 M30 61 l-7 3 M70 58 h8 M70 61 l7 3" ${sw} stroke-width="1.6" opacity=".6"/>`;
+  switch(t){
+  case 12: return `${ears(c,7,31,18,'#FBF3E6')}<path d="M76 84 q14 2 12 -12" stroke="${c}" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M76 84 q14 2 12 -12" ${sw} fill="none" stroke-dasharray="3 4"/>${feet()}${bean()}${belly('#FFF8EC',14)}${outline}
+    <path d="M44 30 l2 6 M50 28 v7 M56 30 l-2 6 M22 54 h6 M22 60 h5 M78 54 h-6 M78 60 h-5" stroke="#5E5754" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="50" cy="59" rx="9" ry="6" fill="#FFF8EC"/><path d="M47.5 55.5 h5 l-2.5 2.6z" fill="${k}"/>${eyes(50,10)}${mouth(60)}${blush(57,18)}${arms()}`;
+  case 13: return `<path d="M40 30 C30 20 30 -2 38 -2 C46 -2 48 18 46 30Z" fill="${c}" ${sw}/><path d="M39 26 C35 18 35 4 38 4 C42 4 43 18 42 26Z" fill="#F7BFC6"/>
+    <path d="M56 30 C58 18 66 6 74 10 C82 16 70 28 62 32Z" fill="${c}" ${sw}/><path d="M59 28 C62 20 68 12 72 14 C75 18 68 25 62 29Z" fill="#F7BFC6"/>
+    <circle cx="80" cy="80" r="7" fill="#fff" ${sw}/><ellipse cx="38" cy="92" rx="9" ry="5" fill="${c}" ${sw}/><ellipse cx="62" cy="92" rx="9" ry="5" fill="${c}" ${sw}/><ellipse cx="38" cy="92" rx="4" ry="2.2" fill="#F7BFC6"/><ellipse cx="62" cy="92" rx="4" ry="2.2" fill="#F7BFC6"/>
+    ${bean()}${belly('#FFFFFF',13)}${outline}
+    <circle cx="41" cy="51" r="3.6" fill="${k}"/><circle cx="59" cy="51" r="3.6" fill="${k}"/><circle cx="42.2" cy="49.8" r="1.3" fill="#fff"/><circle cx="60.2" cy="49.8" r="1.3" fill="#fff"/>
+    <path d="M47 57 h6 l-3 3z" fill="#E98A86" ${sw} stroke-width="1.6"/><path d="M50 60 v2.5 M50 62.5 q-3 3 -6 1 M50 62.5 q3 3 6 1" ${sw} stroke-width="1.8" fill="none"/>
+    <rect x="47.6" y="63" width="4.8" height="4.4" rx="1.2" fill="#fff" ${sw} stroke-width="1.4"/><path d="M50 63 v4.4" ${sw} stroke-width="1"/>
+    <path d="M34 59 h-8 M34 62 l-7 2 M66 59 h8 M66 62 l7 2" ${sw} stroke-width="1.4" opacity=".55"/>${blush(60,17)}<path d="M36 72 q-1 7 5 8 M64 72 q1 7 -5 8" ${sw} fill="none"/>`;
+  case 14: return `${tri(c,'#F7CFCB')}<path d="M76 86 q16 -2 12 -20 q-2 -4 -4 0 q2 12 -8 14" fill="${c}" ${sw}/>${feet()}${bean()}${belly('#FFF5EA',14)}${outline}<path d="M44 30 l1 6 M50 28 v7 M56 30 l-1 6" stroke="#D99A5E" stroke-width="2.6" stroke-linecap="round"/>${eyes()}${mouth()}${whisk}${blush()}${arms()}`;
+  case 15: return `${tri(c,'#FBEBD8')}<path d="M74 70 q14 -6 10 -16 q-8 -2 -6 6 q-2 4 -6 4" fill="${c}" ${sw}/>${feet('#FFF8EE')}${bean()}<path d="M24 60 Q30 72 50 70 Q70 72 76 60 Q80 88 50 92 Q20 88 24 60Z" fill="#FFF8EE"/>${outline}
+    <ellipse cx="41" cy="45" rx="3" ry="2" fill="#FFF8EE"/><ellipse cx="59" cy="45" rx="3" ry="2" fill="#FFF8EE"/>${eyes()}<ellipse cx="50" cy="57" rx="3" ry="2.2" fill="${k}"/>${mouth(60)}${blush(59)}${arms()}`;
+  case 16: return `<path d="M24 44 L24 12 L44 28Z M76 44 L76 12 L56 28Z" fill="${c}" ${sw}/><path d="M28 34 L28 20 L37 28Z M72 34 L72 20 L63 28Z" fill="#5E5754" opacity=".55"/>
+    <path d="M74 82 q22 -2 16 -22 q-10 0 -12 10 q-2 8 -6 8" fill="${c}" ${sw}/><path d="M90 60 q-6 2 -8 8 q4 2 7 0z" fill="#FFF8EE"/>${feet('#5E5754')}${bean()}<path d="M22 52 Q36 50 50 62 Q64 50 78 52 Q80 88 50 92 Q20 88 22 52Z" fill="#FFF8EE"/>${outline}${eyes(50,10)}<ellipse cx="50" cy="60" rx="2.6" ry="2" fill="${k}"/>${mouth(63)}${blush(58,18)}${arms()}`;
+  case 17: return `${ears(c,8,52,31,'#F3D9B8')}<path d="M76 84 q16 4 14 -12 q-1 -6 -6 -4" ${sw} fill="none"/>${feet()}${bean()}<path d="M50 40 C56 32 72 36 68 52 C72 64 62 72 50 72 C38 72 28 64 32 52 C28 36 44 32 50 40Z" fill="#F3D9B8"/>${belly('#F3D9B8',12)}${outline}${eyes(51,8)}<path d="M48 57 h4" ${sw} stroke-width="1.6"/>${mouth(61)}${blush(60,13)}${arms()}`;
+  case 18: return `${ears(c,5,30,16,'#F2B8C0')}${feet()}${bean()}<ellipse cx="50" cy="62" rx="21" ry="13" fill="#D8CBE2" ${sw} stroke-width="2.4"/><ellipse cx="44" cy="58" rx="2" ry="3" fill="${k}"/><ellipse cx="56" cy="58" rx="2" ry="3" fill="${k}"/>${eyes(42,10)}<path d="M42 67 q8 5 16 0" ${sw} stroke-width="2" fill="none"/>${blush(50,19)}<path d="M30 70 q-2 10 8 10 M70 70 q2 10 -8 10" ${sw} fill="none"/>`;
+  case 19: return `<path d="M42 26 q4 -12 8 -14 q4 2 8 14" fill="#5E5754"/>${ears(c,6,30,15)}${feet('#5E5754')}${bean()}
+    <path d="M22 50 h10 M21 60 h12 M22 70 h10 M78 50 h-10 M79 60 h-12 M78 70 h-10 M42 30 l3 7 M58 30 l-3 7 M36 84 l6 -6 M64 84 l-6 -6" stroke="#5E5754" stroke-width="3.6" stroke-linecap="round"/>
+    <ellipse cx="50" cy="62" rx="12" ry="8" fill="#9E9898" ${sw} stroke-width="2.2"/><circle cx="46" cy="60" r="1.5" fill="#fff"/><circle cx="54" cy="60" r="1.5" fill="#fff"/>${eyes(48,10)}${blush(52,17)}`;
+  case 20: { const wool=Array.from({length:16},(_,i)=>{const a=i/16*Math.PI*2;return `<circle cx="${(50+29*Math.cos(a)).toFixed(1)}" cy="${(60+31*Math.sin(a)).toFixed(1)}" r="8" fill="${c}" ${sw}/>`}).join('');
+    return `${wool}<ellipse cx="50" cy="60" rx="29" ry="31" fill="${c}"/><ellipse cx="28" cy="46" rx="8" ry="4" fill="#E8CFB0" ${sw} transform="rotate(25 28 46)"/><ellipse cx="72" cy="46" rx="8" ry="4" fill="#E8CFB0" ${sw} transform="rotate(-25 72 46)"/><ellipse cx="50" cy="52" rx="15" ry="17" fill="#F3DFC6" ${sw}/>${eyes(50,7)}${mouth(57)}${blush(56,11)}<circle cx="50" cy="35" r="5" fill="${c}" ${sw} stroke-width="2"/><circle cx="44" cy="37" r="4" fill="${c}" ${sw} stroke-width="2"/><circle cx="56" cy="37" r="4" fill="${c}" ${sw} stroke-width="2"/>`; }
+  case 21: return `<path d="M28 38 L28 22 L42 30Z M72 38 L72 22 L58 30Z" fill="${c}" ${sw}/>${feet()}${bean()}${eyes(50,11)}<ellipse cx="50" cy="59" rx="9" ry="6.5" fill="#F2A9A2" ${sw} stroke-width="2.2"/><ellipse cx="47" cy="59" rx="1.5" ry="2.2" fill="${k}"/><ellipse cx="53" cy="59" rx="1.5" ry="2.2" fill="${k}"/>${blush(60,19)}${arms()}`;
+  case 22: return `<path d="M30 34 L28 18 L42 28Z M70 34 L72 18 L58 28Z" fill="${c}" ${sw}/>${feet('#F2B266')}${bean()}${belly('#F3E6D2',15)}<path d="M44 74 l3 3 l3 -3 M50 74 l3 3 l3 -3 M47 82 l3 3 l3 -3" stroke="#B89A7A" stroke-width="1.8" fill="none"/>${outline}
+    <circle cx="40" cy="50" r="9" fill="#FFFDF8" ${sw} stroke-width="2.2"/><circle cx="60" cy="50" r="9" fill="#FFFDF8" ${sw} stroke-width="2.2"/><circle cx="40" cy="50" r="3.3" fill="${k}"/><circle cx="60" cy="50" r="3.3" fill="${k}"/><circle cx="41" cy="49" r="1.1" fill="#fff"/><circle cx="61" cy="49" r="1.1" fill="#fff"/><path d="M47 58 L53 58 L50 63Z" fill="#F2B266" ${sw} stroke-width="1.8"/><path d="M26 62 q-6 10 2 18 M74 62 q6 10 -2 18" fill="${c}" ${sw}/>`;
+  case 23: { const sp=Array.from({length:13},(_,i)=>{const a=Math.PI*1.05+i/12*Math.PI*.9;const x=50+34*Math.cos(a),y=58+36*Math.sin(a);const x2=50+46*Math.cos(a),y2=58+48*Math.sin(a);return `<path d="M${(x-5*Math.sin(a)).toFixed(1)} ${(y+5*Math.cos(a)).toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)} L${(x+5*Math.sin(a)).toFixed(1)} ${(y-5*Math.cos(a)).toFixed(1)}Z" fill="#9C7A5A" ${sw} stroke-width="2.2"/>`}).join('');
+    return `${sp}${feet()}<path d="${BEAN}" fill="#9C7A5A" ${sw}/><path d="M28 50 C28 40 40 36 50 42 C60 36 72 40 72 50 C78 72 70 90 50 90 C30 90 22 72 28 50Z" fill="${c}"/>${outline}${ears('#F3E2C8',4.5,36,16)}${eyes(54,9)}<circle cx="50" cy="61" r="2.6" fill="${k}"/>${mouth(64)}${blush(62,16)}${arms()}`; }
+  case 24: return `${ears(c,5,30,17,'#E8C9A8')}<path d="M74 84 q16 4 16 -8 q-4 -4 -8 0 q-2 6 -8 6" fill="${c}" ${sw}/>${feet()}${bean()}${belly('#E8C9A8',15)}${outline}<ellipse cx="50" cy="58" rx="11" ry="7" fill="#E8C9A8"/>${eyes(48,10)}<ellipse cx="50" cy="55" rx="3.2" ry="2.3" fill="${k}"/>${mouth(58)}${whisk}${blush(56,19)}${arms()}`;
+  case 25: return `<path d="M24 70 q-10 4 -8 14 q8 0 12 -8 M76 70 q10 4 8 14 q-8 0 -12 -8" fill="${c}" ${sw}/><path d="M38 90 q-6 8 2 8 q4 -2 6 -6 M62 90 q6 8 -2 8 q-4 -2 -6 -6" fill="${c}" ${sw}/>${bean()}${belly('#B9C5D2',16)}${outline}${eyes(48,9)}<ellipse cx="50" cy="55" rx="3.2" ry="2.4" fill="${k}"/><path d="M44 58 q6 4 12 0" ${sw} stroke-width="2" fill="none"/><circle cx="42" cy="58" r="1" fill="${k}"/><circle cx="58" cy="58" r="1" fill="${k}"/><path d="M38 58 h-8 M62 58 h8" ${sw} stroke-width="1.4" opacity=".6"/>${blush(54,16)}`;
+  case 26: return `<path d="M36 34 v-10 M64 34 v-10" ${sw}/><circle cx="36" cy="22" r="5" fill="#fff" ${sw} stroke-width="2.2"/><circle cx="64" cy="22" r="5" fill="#fff" ${sw} stroke-width="2.2"/><circle cx="36" cy="22" r="2.4" fill="${k}"/><circle cx="64" cy="22" r="2.4" fill="${k}"/>
+    <path d="M18 70 l-10 6 M18 78 l-10 8 M82 70 l10 6 M82 78 l10 8" ${sw}/><path d="M22 52 C10 50 6 38 12 30 L20 36 L18 26 C28 28 30 44 22 52Z M78 52 C90 50 94 38 88 30 L80 36 L82 26 C72 28 70 44 78 52Z" fill="${c}" ${sw}/>
+    <path d="M16 70 C16 46 30 36 50 36 C70 36 84 46 84 70 C84 84 70 90 50 90 C30 90 16 84 16 70Z" fill="${c}" ${sw}/><circle cx="34" cy="50" r="2.5" fill="#F7B9A6"/><circle cx="66" cy="48" r="3" fill="#F7B9A6"/>${eyes(62,9)}${mouth(68)}${blush(70,17)}`;
+  case 27: { const pk=Array.from({length:14},(_,i)=>{const a=i/14*Math.PI*2;return `<path d="M${(50+34*Math.cos(a)).toFixed(1)} ${(58+33*Math.sin(a)).toFixed(1)} l${(6*Math.cos(a)).toFixed(1)} ${(6*Math.sin(a)).toFixed(1)}" ${sw} stroke-width="2.4"/>`}).join('');
+    return `${pk}<path d="M84 58 l10 -8 v16z" fill="${c}" ${sw}/><circle cx="50" cy="58" r="34" fill="${c}" ${sw}/><path d="M22 70 Q50 96 78 70 Q72 90 50 92 Q28 90 22 70Z" fill="#FFF8E3"/><circle cx="50" cy="58" r="34" fill="none" ${sw}/>
+    <circle cx="34" cy="44" r="2" fill="#D9B85E"/><circle cx="62" cy="38" r="2.2" fill="#D9B85E"/><circle cx="70" cy="50" r="1.8" fill="#D9B85E"/>${eyes(54,10)}<ellipse cx="50" cy="64" rx="3.2" ry="2.6" fill="#E98A86" ${sw} stroke-width="1.8"/>${blush(62,18)}<path d="M18 62 q-6 4 -2 10 q4 -2 6 -6" fill="#F2C766" ${sw} stroke-width="2"/>`; }
+  case 28: return `${ears(c,8,30,18,'#6A6464')}<path d="M37 89 q0 6 5 6 q5 0 5 -5 M53 90 q0 5 5 5 q5 0 5 -6" fill="${c}" ${sw}/>${bean()}<path d="M34 68 L50 80 L66 68 L62 66 L50 74 L38 66Z" fill="#FBF7EE"/>
+    <ellipse cx="50" cy="56" rx="10" ry="7" fill="#D9B38C"/><ellipse cx="50" cy="53" rx="3.2" ry="2.3" fill="#2E2A2A"/>${mouth(57)}
+    <circle cx="40" cy="45" r="3.4" fill="#fff"/><circle cx="60" cy="45" r="3.4" fill="#fff"/><circle cx="40.4" cy="45.4" r="2" fill="#2E2A2A"/><circle cx="60.4" cy="45.4" r="2" fill="#2E2A2A"/><ellipse cx="33" cy="54" rx="4" ry="2.4" fill="#F2A9A2" opacity=".7"/><ellipse cx="67" cy="54" rx="4" ry="2.4" fill="#F2A9A2" opacity=".7"/><path d="M33 72 q-1 8 6 9 M67 72 q1 8 -6 9" stroke="#8C8585" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
+  case 29: return `${ears(c,7,32,18,'#5E5754')}<path d="M76 84 q14 2 12 -12" stroke="${c}" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M76 84 q14 2 12 -12" ${sw} fill="none" stroke-dasharray="2 4"/>${feet()}${bean()}${belly('#FFF8EC',14)}${outline}
+    <path d="M42 46 Q38 36 40 28 M58 46 Q62 36 60 28" stroke="#FFF8EC" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M45 44 Q44 36 46 30 M55 44 Q56 36 54 30" stroke="#8C5E36" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <g fill="#8C5E36"><circle cx="28" cy="58" r="2"/><circle cx="32" cy="66" r="2.2"/><circle cx="72" cy="58" r="2"/><circle cx="68" cy="66" r="2.2"/><circle cx="26" cy="74" r="1.8"/><circle cx="74" cy="74" r="1.8"/></g>
+    <ellipse cx="50" cy="59" rx="8" ry="5.5" fill="#FFF8EC"/><path d="M47.5 56 h5 l-2.5 2.6z" fill="#E98A86"/>${eyes(50,9)}${mouth(60)}${blush(57,17)}${arms()}`;
+  case 30: return `<path d="M38 28 l-6 -14 M34 20 l-8 -2 M62 28 l6 -14 M66 20 l8 -2" stroke="#B9844F" stroke-width="3.2" stroke-linecap="round"/><ellipse cx="24" cy="38" rx="8" ry="4" fill="${c}" ${sw} transform="rotate(-25 24 38)"/><ellipse cx="76" cy="38" rx="8" ry="4" fill="${c}" ${sw} transform="rotate(25 76 38)"/>
+    ${feet()}${bean()}${belly('#FBEBD6',14)}${outline}<g fill="#FFF8EC"><circle cx="30" cy="62" r="2.4"/><circle cx="34" cy="72" r="2"/><circle cx="70" cy="62" r="2.4"/><circle cx="66" cy="72" r="2"/><circle cx="44" cy="34" r="2"/><circle cx="58" cy="36" r="2.2"/></g>
+    <ellipse cx="50" cy="59" rx="2.8" ry="2.2" fill="${k}"/>${eyes(51,10)}${mouth(62)}${blush(58,18)}${arms()}`;
+  case 31: return `${feet()}<circle cx="38" cy="30" r="9" fill="${c}" ${sw}/><circle cx="62" cy="30" r="9" fill="${c}" ${sw}/>${bean()}${belly('#E6F3D8',15)}${outline}
+    <circle cx="38" cy="30" r="3" fill="${k}"/><circle cx="62" cy="30" r="3" fill="${k}"/><path d="M36 50 Q50 62 64 50" ${sw} fill="none"/>${blush(50,18)}<circle cx="46" cy="40" r="1.2" fill="${k}"/><circle cx="54" cy="40" r="1.2" fill="${k}"/>${arms()}`;
+  }
+  if(t===32||t===33){ const fluff=(cx,cy,rx,ry,n,f)=>Array.from({length:n},(_,i)=>{const a=i/n*Math.PI*2;return `<circle cx="${(cx+rx*Math.cos(a)).toFixed(1)}" cy="${(cy+ry*Math.sin(a)).toFixed(1)}" r="6.5" fill="${f}" ${sw}/>`}).join('');
+    const sam=t===33;
+    return `<path d="M28 42 L${sam?27:29} ${sam?18:16} Q${sam?35:36} ${sam?20:22} 44 30Z M72 42 L${sam?73:71} ${sam?18:16} Q${sam?65:64} ${sam?20:22} 56 30Z" fill="${c}" ${sw}/><path d="M31 34 L31 23 L38 29Z M69 34 L69 23 L62 29Z" fill="#F7CFCB"/>
+    <path d="M76 70 q16 -4 12 -18 q-10 -2 -10 8" fill="${c}" ${sw}/>${feet()}${bean()}${fluff(50,80,20,9,12,c)}<ellipse cx="50" cy="80" rx="20" ry="9" fill="${c}"/>
+    ${sam?`<path d="M26 54 q-4 4 0 8 M74 54 q4 4 0 8" ${sw} stroke-width="1.8" fill="none" opacity=".5"/>`:''}
+    ${eyes(50,10)}<ellipse cx="50" cy="56" rx="3.2" ry="2.4" fill="${k}"/>${sam?`<path d="M42 59 Q50 68 58 59 Z" fill="#F2A9A2" ${sw} stroke-width="2"/><path d="M42 59 q4 2 8 0 q4 2 8 0" ${sw} stroke-width="2" fill="none"/>`:mouth(59)}${blush(57,18)}<path d="M36 72 q-1 7 5 8 M64 72 q1 7 -5 8" ${sw} fill="none"/>`; }
+  if(t===34){ const wav=(x,dir)=>`M${x} 30 C${x-dir*16} 34 ${x-dir*18} 54 ${x-dir*14} 62 C${x-dir*20} 70 ${x-dir*16} 84 ${x-dir*12} 94 C${x-dir*6} 98 ${x-dir*2} 94 ${x} 88`;
+    return `<path d="${wav(30,1)}" fill="${c}" ${sw}/><path d="${wav(70,-1)}" fill="${c}" ${sw}/>
+    <path d="M18 50 q4 8 0 16 M16 70 q4 8 0 14 M82 50 q-4 8 0 16 M84 70 q-4 8 0 14" ${sw} stroke-width="1.5" fill="none" opacity=".45"/>
+    ${feet()}${bean()}<path d="M50 26 q-14 4 -20 16 M50 26 q14 4 20 16" ${sw} stroke-width="1.5" fill="none" opacity=".45"/><path d="M50 26 v8" ${sw} stroke-width="1.5" opacity=".45"/>
+    <path d="M44 24 C42 14 46 6 50 4 C54 6 58 14 56 24Z" fill="${c}" ${sw} stroke-width="2.4"/><path d="M48 8 q2 -6 6 -6" ${sw} stroke-width="2" fill="none"/>
+    <g transform="translate(50 22)"><path d="M0 0 L-12 -7 L-12 7Z M0 0 L12 -7 L12 7Z" fill="#F2A9C0" ${sw} stroke-width="2.2"/><circle r="3.4" fill="#F2A9C0" ${sw} stroke-width="2"/></g>
+    <ellipse cx="50" cy="61" rx="11" ry="8" fill="#F6F1EA"/>
+    <circle cx="40" cy="50" r="4.6" fill="${k}"/><circle cx="60" cy="50" r="4.6" fill="${k}"/><circle cx="41.5" cy="48.5" r="1.7" fill="#fff"/><circle cx="61.5" cy="48.5" r="1.7" fill="#fff"/>
+    <ellipse cx="50" cy="58" rx="4.2" ry="3.2" fill="${k}"/><ellipse cx="49" cy="57" rx="1.2" ry=".8" fill="#fff" opacity=".6"/>
+    <path d="M50 61 v2 M46 63 q2 3 4 0 q2 3 4 0" ${sw} stroke-width="2" fill="none"/><path d="M48.5 65 q1.5 3 3 0z" fill="#F2A9A2"/>${blush(60,17)}${arms()}`; }
+  return bean();
 }
-function mascotSvg(){ // 小糰：原創吉祥物（飯糰造型的星球精靈）
-  const k='#4A3B52';
-  return `<svg viewBox="0 0 100 100"><path d="M50 8 C62 8 92 62 88 78 C85 90 70 92 50 92 C30 92 15 90 12 78 C8 62 38 8 50 8Z" fill="#fff" stroke="${k}" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M26 70 L74 70 L74 92 C64 93 36 93 26 92Z" fill="#4A3B52"/><path d="M44 78 l3 -6 3 6 6 1 -4.5 4 1.5 6 -6 -3 -6 3 1.5 -6 -4.5 -4Z" fill="#FFD45C"/>
-  <circle cx="38" cy="50" r="4.5" fill="${k}"/><circle cx="62" cy="50" r="4.5" fill="${k}"/><circle cx="39.5" cy="48.5" r="1.6" fill="#fff"/><circle cx="63.5" cy="48.5" r="1.6" fill="#fff"/>
-  <ellipse cx="29" cy="59" rx="6" ry="3.5" fill="#FF8FAB" opacity=".6"/><ellipse cx="71" cy="59" rx="6" ry="3.5" fill="#FF8FAB" opacity=".6"/>
-  <path d="M45 57 q5 6 10 0" stroke="${k}" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>`;
+function critter(type,acc='none',mood='happy'){
+  const k='#5B3A29';
+  let a='';
+  if(acc==='bow') a=`<g transform="translate(68 28) rotate(15)"><path d="M0 0 L-12 -8 L-12 8Z M0 0 L12 -8 L12 8Z" fill="#E98A86" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/><circle r="4" fill="#E98A86" stroke="${k}" stroke-width="2.5"/></g>`;
+  if(acc==='leaf') a=`<path d="M50 26 L50 14" stroke="${k}" stroke-width="3"/><path d="M50 16 C40 4 30 12 34 14 C40 18 46 16 50 16Z M50 16 C60 4 70 12 66 14 C60 18 54 16 50 16Z" fill="#9CC9A8" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  if(acc==='crown') a=`<path d="M34 28 L32 12 L42 20 L50 8 L58 20 L68 12 L66 28Z" fill="#EFC96B" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><circle cx="50" cy="20" r="2.6" fill="#E98A86"/>`;
+  if(acc==='hat') a=`<path d="M30 30 L70 30 L60 26 L54 2 L40 22 Z" fill="#9DB2CF" stroke="${k}" stroke-width="3" stroke-linejoin="round"/><path d="M26 30 L74 30" stroke="${k}" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="18" r="2.5" fill="#EFC96B"/>`;
+  if(acc==='star') a=`<path d="M72 26 l3 7 7 1 -5 5 1.5 7 -6.5 -3.5 -6.5 3.5 1.5 -7 -5 -5 7 -1Z" fill="#EFC96B" stroke="${k}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  if(acc==='glass') a=`<circle cx="38" cy="57" r="9" fill="none" stroke="${k}" stroke-width="3"/><circle cx="62" cy="57" r="9" fill="none" stroke="${k}" stroke-width="3"/><path d="M47 57 L53 57" stroke="${k}" stroke-width="3"/>`;
+  if(acc==='flower') a=`<g transform="translate(30 32)">${[0,72,144,216,288].map(r=>`<ellipse rx="4.5" ry="7" transform="rotate(${r}) translate(0 -6)" fill="#F2B8B5" stroke="${k}" stroke-width="2"/>`).join('')}<circle r="3.5" fill="#EFC96B" stroke="${k}" stroke-width="2"/></g>`;
+  const tw=themeWear((typeof S!=='undefined'&&S&&S.theme)||'cookie');
+  const ICE=['#E8F1F8','#FBEDEB','#EDF4E6','#FBF5DF','#F1ECF6','#FBF0E3'][type%6];
+  const dots=Array.from({length:18},(_,i)=>{const t=i/18*Math.PI*2;return `<circle cx="${(50+44.5*Math.cos(t)).toFixed(1)}" cy="${(54+44.5*Math.sin(t)).toFixed(1)}" r="1.7" fill="#fff" opacity=".95"/>`}).join('');
+  const cookie=`<circle cx="50" cy="56" r="49" fill="#B97A43" opacity=".35"/><circle cx="50" cy="54" r="49" fill="#DCA569"/><circle cx="50" cy="54" r="49" fill="none" stroke="#C98C52" stroke-width="2"/><circle cx="50" cy="54" r="42" fill="${ICE}"/><circle cx="50" cy="54" r="40.5" fill="none" stroke="#fff" stroke-width="2.2" opacity=".9"/>${dots}<ellipse cx="36" cy="30" rx="16" ry="7" fill="#fff" opacity=".35" transform="rotate(-20 36 30)"/><circle cx="50" cy="12.5" r="3.4" fill="#B97A43"/><circle cx="50" cy="12" r="2.4" fill="#8E5A2E"/>`;
+  const theme=(typeof S!=='undefined'&&S&&S.theme)||'cookie';
+  return `<svg viewBox="-1 3 102 104" xmlns="http://www.w3.org/2000/svg">${cookie}<g transform="translate(9.5 17) scale(.81)">${animalArt(type,mood)}${tw.neck}${tw.face}${theme!=='cookie'?(tw.head||a):(a||tw.head)}</g></svg>`;
+}
+function mascotSvg(){ // 點點：鯨鯊吉祥物（身上的白點＝點點星球的「點點」）
+  const k='#5E5754',c='#6E92BC';
+  const spots=[[30,38,2.6],[40,32,2.2],[52,30,2.6],[63,33,2.2],[72,40,2.6],[24,48,2.2],[78,50,2.2],[35,44,1.8],[47,40,1.8],[58,41,2],[68,46,1.8],[20,58,1.8],[82,60,1.8]]
+    .map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#fff"/>`).join('');
+  const w=themeWear(typeof S!=='undefined'&&S?S.theme:'cookie');
+  return `<svg viewBox="-4 -6 108 106"><path d="M44 24 L53 4 L62 25Z" fill="${c}" stroke="${k}" stroke-width="2.8" stroke-linejoin="round"/>
+  <ellipse cx="11" cy="74" rx="6" ry="13" fill="${c}" stroke="${k}" stroke-width="2.8" transform="rotate(40 11 74)"/><ellipse cx="89" cy="74" rx="6" ry="13" fill="${c}" stroke="${k}" stroke-width="2.8" transform="rotate(-40 89 74)"/>
+  <path d="M8 60 C8 34 28 22 50 22 C72 22 92 34 92 60 C92 80 74 90 50 90 C26 90 8 80 8 60Z" fill="${c}" stroke="${k}" stroke-width="2.8"/>
+  <path d="M14 70 Q50 96 86 70 Q82 88 50 90 Q18 88 14 70Z" fill="#EEF3F8"/><path d="M8 60 C8 34 28 22 50 22 C72 22 92 34 92 60 C92 80 74 90 50 90 C26 90 8 80 8 60Z" fill="none" stroke="${k}" stroke-width="2.8"/>
+  ${spots}<path d="M30 30 q20 -6 40 0" stroke="#fff" stroke-width="1.6" fill="none" opacity=".35"/>
+  <circle cx="30" cy="56" r="4.5" fill="${k}"/><circle cx="70" cy="56" r="4.5" fill="${k}"/><circle cx="31.5" cy="54.5" r="1.6" fill="#fff"/><circle cx="71.5" cy="54.5" r="1.6" fill="#fff"/>
+  <ellipse cx="22" cy="65" rx="6" ry="3.5" fill="#E9958F" opacity=".6"/><ellipse cx="78" cy="65" rx="6" ry="3.5" fill="#E9958F" opacity=".6"/>
+  <path d="M34 66 Q50 76 66 66" stroke="${k}" stroke-width="2.8" fill="#F2B8B5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(0 -4)">${w.neck}</g>${w.face}<g transform="translate(12 6) scale(.76)">${w.head}</g></svg>`;
 }
 
 /* ---------- 資料 ---------- */
 const KEY='pointplanet_v1';
 const DEFAULT={
   plan:'free', className:'三年二班', goal:300, role:'teacher', me:0,
-  students:[['小安',0],['佳佳',1],['阿哲',2],['米米',3],['宇宇',4],['小晴',5],['皓皓',2],['芸芸',1],['柏柏',4],['可可',0],['阿德',5],['朵朵',3]]
+  students:[['小安',0],['佳佳',1],['阿哲',2],['米米',3],['宇宇',4],['小晴',5],['皓皓',6],['芸芸',7],['柏柏',8],['可可',9],['阿德',10],['朵朵',11]]
    .map((s,i)=>({id:i,name:s[0],pet:s[1],acc:'none',points:[8,12,5,15,3,10,7,9,4,11,6,13][i],total:[18,25,12,30,9,22,16,20,10,24,14,28][i]})),
   skills:[
    {e:'✋',l:'踴躍發言',p:1},{e:'🤝',l:'幫助同學',p:2},{e:'📚',l:'作業完成',p:1},{e:'🎯',l:'專心上課',p:1},
@@ -275,7 +512,7 @@ const timeAgo=t=>{const m=Math.round((Date.now()-t)/60000);return m<1?'剛剛':m
 /* ---------- 特效 ---------- */
 function burst(x,y,txt,good=true){
   const f=document.createElement('div');f.className='float';f.textContent=txt;
-  f.style.left=x-20+'px';f.style.top=y-30+'px';f.style.color=good?'#FFD45C':'#FF7A9C';document.body.appendChild(f);setTimeout(()=>f.remove(),1000);
+  f.style.left=x-20+'px';f.style.top=y-30+'px';f.style.color=good?'#EFC96B':'#E98A86';document.body.appendChild(f);setTimeout(()=>f.remove(),1000);
   if(!good)return;
   for(let i=0;i<10;i++){const c=document.createElement('div');c.className='conf';c.textContent=['⭐','✨','💖','🌟','🍬'][i%5];
    c.style.left=x+'px';c.style.top=y+'px';c.style.setProperty('--dx',(Math.random()*160-80)+'px');document.body.appendChild(c);setTimeout(()=>c.remove(),1200);}
@@ -305,7 +542,7 @@ function teacherView(){
   let h=subtabs('teacher',[['class','⭐ 班級加分'],['shop','🎁 獎品商店'+(wait?` (${wait})`:'')],['log','📒 紀錄'],['set','⚙️ 設定']]);
   if(sub.teacher==='class'){
     const earned=classEarned(),pct=Math.min(100,earned/S.goal*100);
-    h+=`<div class="card goal"><svg class="jar" viewBox="0 0 66 78"><rect x="14" y="4" width="38" height="10" rx="4" fill="#B9A4F0" stroke="#4A3B52" stroke-width="3"/><path d="M10 18 h46 v48 a8 8 0 0 1-8 8 h-30 a8 8 0 0 1-8-8z" fill="#fff" stroke="#4A3B52" stroke-width="3"/><path d="M13 ${74-56*pct/100} h40 v${56*pct/100-4} a6 6 0 0 1-6 6 h-28 a6 6 0 0 1-6-6z" fill="#FFD45C"/><text x="33" y="50" text-anchor="middle" font-size="16">🍬</text></svg>
+    h+=`<div class="card goal"><svg class="jar" viewBox="0 0 66 78"><rect x="14" y="4" width="38" height="10" rx="4" fill="#9DB2CF" stroke="#5B3A29" stroke-width="3"/><path d="M10 18 h46 v48 a8 8 0 0 1-8 8 h-30 a8 8 0 0 1-8-8z" fill="#fff" stroke="#5B3A29" stroke-width="3"/><path d="M13 ${74-56*pct/100} h40 v${56*pct/100-4} a6 6 0 0 1-6 6 h-28 a6 6 0 0 1-6-6z" fill="#EFC96B"/><text x="33" y="50" text-anchor="middle" font-size="16">🍬</text></svg>
       <div style="flex:1"><b>全班目標：${earned>=S.goal?'達成！🎉 開派對吧':'累積 '+S.goal+' 點 → 全班派對'}</b><div class="bar" style="margin:6px 0"><i style="width:${pct}%"></i></div><div class="muted">目前 ${earned} / ${S.goal} 點（每位同學賺到的點數都會加進糖果罐）</div></div></div>
     <div class="toolbar">
       <button class="btn pink" onclick="openWhole(event)">🎉 全班加分</button>
@@ -403,8 +640,9 @@ function studentView(){
   }
   if(sub.student==='dress'){
     h+=`<div class="row"><div class="card" style="flex:0 0 220px;text-align:center"><div style="width:170px;margin:auto">${critter(s.pet,s.acc,'wink')}</div><b>${PETS[s.pet].name}</b></div>
-     <div class="card grow"><div class="sec" style="margin-top:0">換配件 ${S.plan==='free'?'<span class="muted">（🔒 = 家長 Plus 專屬）</span>':''}</div><div class="acc">${ACCS.map(a=>{const lock=a.plus&&S.plan==='free';return `<button class="accb ${s.acc===a.id?'on':''}" onclick="${lock?"S.role='parent';sub.parent='plan';render();say('這是 Plus 配件喔，請爸媽看看～')":`S.students[${s.id}].acc='${a.id}';render()`}"><span class="e">${a.e}</span>${a.name}${lock?'<div class="lock">🔒</div>':''}</button>`}).join('')}</div>
-     <p class="note" style="margin-top:12px">設計原則：付費只買「裝飾」和「家長功能」，<b>不能買點數</b>——點數只能靠在學校的表現賺到，才公平。</p></div></div>`;
+     <div class="card grow"><div class="sec" style="margin-top:0">換配件 ${S.plan==='free'?'<span class="muted">（🔒 = 家長 Plus 專屬）</span>':''}</div>${S.theme&&S.theme!=='cookie'?'<p class="note" style="margin:0 0 12px">目前是「'+THEMES[S.theme].n+'」主題，頭上戴的是主題造型；切回「餅乾烤盤」就會顯示自己選的配件。</p>':''}<div class="acc">${ACCS.map(a=>{const lock=a.plus&&S.plan==='free';return `<button class="accb ${s.acc===a.id?'on':''}" onclick="${lock?"S.role='parent';sub.parent='plan';render();say('這是 Plus 配件喔，請爸媽看看～')":`S.students[${s.id}].acc='${a.id}';render()`}"><span class="e">${a.e}</span>${a.name}${lock?'<div class="lock">🔒</div>':''}</button>`}).join('')}</div>
+     <p class="note" style="margin-top:12px">設計原則：付費只買「裝飾」和「家長功能」，<b>不能買點數</b>——點數只能靠在學校的表現賺到，才公平。</p></div></div>
+     <div class="card" style="margin-top:22px"><div class="sec" style="margin-top:0">🐾 選我的角色（${PETS.length} 種，點一下就換）</div><div class="petgrid">${PETS.map((p,i)=>`<button class="${s.pet===i?'on':''}" onclick="S.students[${s.id}].pet=${i};render();say('你好！我是'+PETS[${i}].name+'～')">${critter(i,'none')}<span>${p.name}</span></button>`).join('')}</div></div>`;
   }
   return h;
 }
@@ -446,13 +684,61 @@ function lockCard(name){return `<div class="card" style="text-align:center;paddi
 function togglePlan(ev){S.plan=S.plan==='free'?'plus':'free';if(S.plan==='plus'){burst(ev.clientX,ev.clientY,'⭐ Plus!',true);say('Plus 開啟！去「打扮」看看新配件～')}else say('已切回免費版');render()}
 function homePt(sid,e,l,p,ev){const s=S.students[sid];s.points+=p;s.total+=p;S.log.unshift({sid,e:'🏠'+e,l,p,t:Date.now()});burst(ev.clientX,ev.clientY,'+'+p,true);say('在家也好棒！');save()}
 
+
+/* ---------- 背景主題 ---------- */
+const svgUrl=x=>'url("data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">${x}</svg>`)+'")';
+const PAW=(x,y,c,r=0)=>`<g transform="translate(${x} ${y}) rotate(${r})" fill="${c}"><ellipse cx="0" cy="6" rx="8" ry="7"/><circle cx="-8" cy="-5" r="3.4"/><circle cx="-2.8" cy="-9" r="3.4"/><circle cx="2.8" cy="-9" r="3.4"/><circle cx="8" cy="-5" r="3.4"/></g>`;
+const FISH=(x,y,c,f=1)=>`<g transform="translate(${x} ${y}) scale(${f} 1)"><ellipse rx="12" ry="7.5" fill="${c}"/><path d="M10 0 L21 -7 L21 7Z" fill="${c}"/><circle cx="-6" cy="-1.5" r="1.6" fill="#5B3A29"/></g>`;
+const FLAKE=(x,y,c,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})" stroke="${c}" stroke-width="2.4" stroke-linecap="round">${[0,60,120].map(r=>`<path d="M0 -11 L0 11 M-4 -8 L0 -4 L4 -8 M-4 8 L0 4 L4 8" transform="rotate(${r})"/>`).join('')}</g>`;
+const THEMES={
+ cookie:{n:'餅乾烤盤',e:'🍪',bg:'#F3E9DA',img:'radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.7),transparent 60%),repeating-linear-gradient(0deg,transparent 0 38px,rgba(140,105,75,.10) 38px 40px),repeating-linear-gradient(90deg,transparent 0 38px,rgba(140,105,75,.10) 38px 40px)',
+   v:{pink:'#E98A86',navy:'#3E5672',sky:'#8FB3D1',mint:'#9CC9A8',yellow:'#EFC96B'},hi:'點一位同學來加分吧！'},
+ newyear:{n:'農曆新年',e:'🧧',bg:'#F8E4D8',v:{pink:'#D95B4F',navy:'#9B2F2A',sky:'#E6A07A',mint:'#B9C98A',yellow:'#E3B24F'},hi:'新年快樂！恭喜發財～',
+   p:`<g transform="translate(40 40)"><path d="M0 -24 v6" stroke="#C9965E" stroke-width="2"/><ellipse rx="16" ry="13" fill="#E06E62"/><path d="M-16 0 h32 M0 -13 v26" stroke="#C94F45" stroke-width="1.5"/><rect x="-7" y="-15" width="14" height="4" fill="#E8C25E"/><rect x="-7" y="11" width="14" height="4" fill="#E8C25E"/><path d="M0 15 v10 M-3 25 h6" stroke="#E8C25E" stroke-width="2.5"/></g>
+   <g transform="translate(135 110) rotate(45)"><rect x="-16" y="-16" width="32" height="32" rx="3" fill="#E06E62"/></g><text x="135" y="118" text-anchor="middle" font-size="20" font-weight="700" fill="#F3D78A" font-family="sans-serif">福</text>
+   <g fill="#EFC96B" stroke="#D9A54A" stroke-width="2"><circle cx="140" cy="30" r="9"/><circle cx="55" cy="150" r="8"/></g><rect x="137" y="27" width="6" height="6" fill="#F8E4D8"/><rect x="52" y="147" width="6" height="6" fill="#F8E4D8"/>
+   <path d="M80 95 q-10 0 -10 -8 q0 -8 9 -7 q2 -9 12 -7 q10 -1 11 8 q8 0 8 7 q0 7 -9 7z" fill="#fff" opacity=".8"/>`},
+ dragon:{n:'端午節',e:'🐉',bg:'#DCEEE8',v:{pink:'#E0786A',navy:'#2E6B5E',sky:'#7DB8B0',mint:'#8FC59E',yellow:'#E8C25E'},hi:'划龍舟、吃粽子～端午節快樂！',
+   p:`<path d="M0 158 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#fff" stroke-width="3" opacity=".85"/><path d="M0 172 q15 -8 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#fff" stroke-width="2" opacity=".5"/>
+   <g transform="translate(80 62)"><path d="M-34 0 q34 14 68 0 l-4 8 q-30 10 -60 0z" fill="#E0786A"/><path d="M-34 1 q-8 -10 0 -17 q5 6 1 11z" fill="#E8C25E"/><circle cx="-35" cy="-10" r="1.6" fill="#5B3A29"/><path d="M34 1 q6 -6 4 -12" stroke="#E8C25E" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M-30 4 q30 12 60 0" stroke="#E8C25E" stroke-width="2" fill="none"/><g stroke="#B98A5E" stroke-width="2.5" stroke-linecap="round"><path d="M-18 -1 l-8 15"/><path d="M-4 1 l-8 15"/><path d="M10 1 l-8 15"/><path d="M24 -1 l-8 15"/></g></g>
+   <g transform="translate(140 125)"><path d="M0 -14 l14 22 h-28z" fill="#8FC59E" stroke="#6E9F7C" stroke-width="2" stroke-linejoin="round"/><path d="M-8 0 h16" stroke="#E8C25E" stroke-width="2.5"/></g>
+   <g transform="translate(32 118) rotate(-12)"><path d="M0 -12 l12 19 h-24z" fill="#8FC59E" stroke="#6E9F7C" stroke-width="2" stroke-linejoin="round"/><path d="M-7 -1 h14" stroke="#E8C25E" stroke-width="2.5"/></g>
+   <g transform="translate(152 26)"><path d="M0 -14 v6" stroke="#E0786A" stroke-width="2"/><path d="M0 -8 c-10 -6 -14 6 0 14 c14 -8 10 -20 0 -14z" fill="#E0786A"/><path d="M0 6 v10 M-3 16 h6" stroke="#E8C25E" stroke-width="2"/></g>`},
+ moon:{n:'中秋節',e:'🥮',bg:'#ECE6F2',v:{pink:'#E39A84',navy:'#4A4A7A',sky:'#9FA8D3',mint:'#B5C98A',yellow:'#E9C46A'},hi:'中秋節快樂！一起賞月吃月餅～',
+   p:`<g transform="translate(132 46)"><circle r="24" fill="#F6E2A0"/><circle cx="-8" cy="-6" r="4" fill="#EDD08A"/><circle cx="7" cy="7" r="5.5" fill="#EDD08A"/><circle cx="9" cy="-10" r="2.5" fill="#EDD08A"/></g>
+   <g fill="#fff"><path d="M30 30 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/><path d="M90 100 l1.5 4.5 4.5 1.5 -4.5 1.5 -1.5 4.5 -1.5 -4.5 -4.5 -1.5 4.5 -1.5z"/><path d="M165 110 l1.5 4.5 4.5 1.5 -4.5 1.5 -1.5 4.5 -1.5 -4.5 -4.5 -1.5 4.5 -1.5z"/></g>
+   <g transform="translate(42 140)" fill="#fff"><ellipse cx="0" cy="6" rx="13" ry="10"/><circle cx="10" cy="-5" r="7"/><ellipse cx="7" cy="-17" rx="2.6" ry="8" transform="rotate(-12 7 -17)"/><ellipse cx="13" cy="-17" rx="2.6" ry="8" transform="rotate(10 13 -17)"/><circle cx="-12" cy="8" r="3.5"/></g>
+   <g transform="translate(62 60)"><circle r="13" fill="#E3B77A" stroke="#C9965E" stroke-width="2"/><circle r="7.5" fill="none" stroke="#C9965E" stroke-width="1.6"/><circle r="2.2" fill="#C9965E"/></g>
+   <g transform="translate(140 145)"><circle r="14" fill="#CFE08A"/><path d="M0 -14 v-5" stroke="#8B6E4A" stroke-width="2.5"/><path d="M0 -17 q9 -7 14 0 q-7 6 -14 0z" fill="#8FC59E"/></g>`},
+ xmas:{n:'聖誕節',e:'🎄',bg:'#E7EFEA',v:{pink:'#D97470',navy:'#2F5D4A',sky:'#8EB5A6',mint:'#7FB38F',yellow:'#E8C25E'},hi:'叮叮噹～聖誕快樂！',
+   p:`${FLAKE(30,30,'#fff',1)}${FLAKE(140,110,'#fff',.8)}${FLAKE(90,165,'#fff',.6)}
+   <g transform="translate(130 45)"><path d="M0 -20 l14 22 h-7 l10 15 h-34 l10 -15 h-7z" fill="#8FBF8F"/><rect x="-3" y="17" width="6" height="6" fill="#C9965E"/><circle cx="-5" cy="2" r="2" fill="#E98A86"/><circle cx="6" cy="10" r="2" fill="#EFC96B"/><path d="M0 -24 l2 4 h4 l-3 3 l1 4 l-4 -2 l-4 2 l1 -4 l-3 -3 h4z" fill="#EFC96B"/></g>
+   <g transform="translate(45 120)" fill="none" stroke-linecap="round"><path d="M0 22 v-20 a7 7 0 0 1 14 0" stroke="#fff" stroke-width="6"/><path d="M0 22 v-20 a7 7 0 0 1 14 0" stroke="#E98A86" stroke-width="6" stroke-dasharray="4 5"/></g>
+   <g transform="translate(160 165)"><rect x="-10" y="-8" width="20" height="16" rx="2" fill="#E98A86"/><path d="M0 -8 v16 M-10 0 h20" stroke="#EFC96B" stroke-width="3"/></g>`},
+
+};
+function applyTheme(id,silent){
+  const t=THEMES[id]||THEMES.cookie;S.theme=id in THEMES?id:'cookie';
+  document.body.style.backgroundColor=t.bg;
+  document.body.style.backgroundImage=t.img||('radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.6),transparent 60%),'+svgUrl(t.p));
+  document.body.style.backgroundSize=t.img?'auto':'auto,180px 180px';
+  const r=document.documentElement.style;Object.entries(t.v).forEach(([k,v])=>r.setProperty('--'+k,v));
+  renderThemeBar();$('#mascotSvg').innerHTML=mascotSvg();$('#logoMascot').innerHTML=mascotSvg().replace('<svg','<svg width="52" height="52"');if(!silent){render();say(t.e+' '+t.hi)}save();
+}
+function renderThemeBar(){
+  $('#themeBar').innerHTML=Object.entries(THEMES).map(([id,t])=>`<button class="th ${S.theme===id?'on':''}" onclick="applyTheme('${id}')"><span class="sw" style="background-color:${t.bg}">${t.e}</span>${t.n}</button>`).join('');
+}
+function toggleThemeBar(){$('#themeBar').classList.toggle('on');renderThemeBar()}
+
 /* ---------- 啟動 ---------- */
 document.querySelectorAll('.role').forEach(b=>b.onclick=()=>{S.role=b.dataset.r;selMode=false;sel.clear();render();
   say({teacher:'點一位同學來加分吧！',student:'看看你的寵物長多大了～',parent:'爸媽可以在這裡看報告喔！'}[S.role])});
 $('#mascotSvg').innerHTML=mascotSvg();
 $('#logoMascot').innerHTML=mascotSvg().replace('<svg','<svg width="52" height="52"');
+applyTheme(S.theme||'cookie',true);
 render();
 </script>
+
 <!-- Cloudflare Web Analytics (skip on devices opened once with ?notrack=1; undo with ?notrack=0) -->
 <script>(function(){try{var q=location.search;if(/[?&]notrack=1/.test(q))localStorage.setItem('cw-notrack','1');if(/[?&]notrack=0/.test(q))localStorage.removeItem('cw-notrack');if(localStorage.getItem('cw-notrack')==='1'){console.log('analytics off on this device');return}}catch(e){}var s=document.createElement('script');s.defer=true;s.src='https://static.cloudflareinsights.com/beacon.min.js';s.setAttribute('data-cf-beacon','{"token": "a9294b7012bb4e4bbf4b67f23979b202"}');document.body.appendChild(s)})();</script>
 <!-- End Cloudflare Web Analytics -->
